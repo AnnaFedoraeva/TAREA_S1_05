@@ -6,7 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/anna1/Documents/IT ACADEMY/commons-io-2.11.0-src.zip"/>
-	<classpathentry kind="lib" path="C:/Users/anna1/Downloads/commons-io-2.11.0-bin.zip"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

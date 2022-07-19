@@ -7,30 +7,21 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 
 public class Lista {
-	
-	//Crea una classe que llisti alfabèticament el contingut d'un directori rebut per paràmetre.
+
 	public static void main(String[] args) throws IOException {
-		String archivo = "D:\\";
-		File archivoFile = new File("D:/");
 
-		getNames(archivo);
-		sort(archivoFile);
-	}
-
-	public static void getNames(String archivo) throws IOException {
-
-		Files.list(Paths.get(archivo)).sorted().forEach(System.out::println);
-
-	}
-
-	public static void sort(File archivoFile) {
-
+		File archivoFile = new File(args[0]);
 		File[] files = archivoFile.listFiles();
 
 		Arrays.sort(files, (f1, f2) -> f1.compareTo(f2));
 		for (File file : files) {
-			System.out.println("FILE\t" + file.getName());
+			System.out.println("FILE " + file.getName());
 		}
+		
+		//O usando el concepto de Java List Directory
+		Files.list(Paths.get(args[1])).sorted().forEach(System.out::println);
+
 	}
+	
 
 }

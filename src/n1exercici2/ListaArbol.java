@@ -6,14 +6,9 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class ListaArbol {
-	// Afegeix a la classe de l’exercici anterior, la funcionalitat de llistar un
-	// arbre de directoris amb el contingut de tots els seus nivells (recursivament)
-	// de manera que s'imprimeixin en pantalla en ordre alfabètic dins de cada
-	// nivell, indicant a més si és un directori (D) o un fitxer (F), i la seva
-	// última data de modificació.
 
 	public static void main(String[] args) {
-		File archivo = new File("C:\\Python310");
+		File archivo = new File(args[0]);
 
 		File[] files = archivo.listFiles();
 
@@ -25,15 +20,7 @@ public class ListaArbol {
 
 	public static void sort(File[] files, SimpleDateFormat dateFormat) {
 
-		Arrays.sort(files, (f1, f2) -> {
-			if (f1.isDirectory() && !f2.isDirectory()) {
-				return -1;
-			} else if (!f1.isDirectory() && f2.isDirectory()) {
-				return 1;
-			} else {
-				return f1.compareTo(f2);
-			}
-		});
+		Arrays.sort(files, (f1, f2) -> Boolean.compare(f2.isDirectory(), f1.isDirectory()));
 
 		for (File file : files) {
 			if (file.isDirectory()) {
@@ -44,3 +31,4 @@ public class ListaArbol {
 		}
 	}
 }
+//		}

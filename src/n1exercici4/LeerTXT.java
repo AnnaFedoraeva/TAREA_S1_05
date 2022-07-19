@@ -11,28 +11,23 @@ import java.io.IOException;
 public class LeerTXT {
 
 	public static void main(String[] args) throws IOException {
-		
-		String archivo = "C:\\Users\\anna1\\Documents\\IT ACADEMY\\ArbolList.txt";
-		readTXT (archivo);
-		
+
+		String archivo = args[0];
+		readTXT(archivo);
+
 	}
-		
-		public static void readTXT (String archivo) throws IOException {
-		
-		 File file = new File(
-				 archivo);
-	
-		        BufferedReader txt  = new BufferedReader(new FileReader(file));
-		 
-		        String string;
-		        
-		        while ((string = txt.readLine()) != null)
-		 
-		            System.out.println(string);
-		    }
-	
+
+	public static void readTXT(String archivo) throws IOException {
+
+		File file = new File(archivo);
+
+		BufferedReader txt = new BufferedReader(new FileReader(file));
+
+		String string;
+
+		while ((string = txt.readLine()) != null)
+
+			System.out.println(string);
+	}
 
 }
-
-
-

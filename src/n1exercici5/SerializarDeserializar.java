@@ -8,11 +8,13 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Date;
 
+//Ara el programa ha de serialitzar un Objecte Java a un fitxer .ser i després l’ha de desserialitzar.
+
 public class SerializarDeserializar implements Serializable {
 
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		
-		String fichero = "C:\\Users\\anna1\\Documents\\IT ACADEMY\\ArbolList.ser";
+		String fichero = args[0];
 		
 		serializar(fichero);
 		deserializar(fichero);
